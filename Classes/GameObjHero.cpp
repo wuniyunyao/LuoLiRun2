@@ -63,7 +63,7 @@ void GameObjHero::setState(short var){
             this->stopAllActions();
             mainsprite->stopAllActions();
             mainsprite->setTexture(jump);
-            this->runAction(CCSequence::create(CCJumpBy::create(2.5,ccp(0,0),100,1),CCCallFunc::create(this, callfunc_selector(GameObjHero::jumpend)),NULL));
+            this->runAction(CCSequence::create(CCJumpBy::create(0.9,ccp(0,0),100,1),CCCallFunc::create(this, callfunc_selector(GameObjHero::jumpend)),NULL));
             break;
         case 2://受伤
             this->stopAllActions();

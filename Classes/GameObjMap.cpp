@@ -21,7 +21,7 @@ void GameObjMap::bg1change(){
     //运动出屏幕重设位置，运动
     CCSprite * bg = (CCSprite *)this->getChildByTag(0);
     bg->setPosition(ccp(480,320));
-    bg->runAction(CCSequence::create(CCMoveBy::create(20,ccp(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
+    bg->runAction(CCSequence::create(CCMoveBy::create(6,ccp(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
     for(int i = 0;i < 5;i ++){
         ((GameObjStar *)stars1->objectAtIndex(i))->set_visable(true);
     }
@@ -30,7 +30,7 @@ void GameObjMap::bg2change(){
     //运动出屏幕重设位置，运动
     CCSprite * bg = (CCSprite *)this->getChildByTag(1);
     bg->setPosition(ccp(480,320));
-    bg->runAction(CCSequence::create(CCMoveBy::create(20,ccp(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
+    bg->runAction(CCSequence::create(CCMoveBy::create(6,ccp(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
     for(int i = 0;i < 5;i ++){
         ((GameObjStar *)stars2->objectAtIndex(i))->set_visable(true);
     }
@@ -57,8 +57,8 @@ void GameObjMap::onEnter(){
     bgdi2->setAnchorPoint(ccp(0,0));
     bgdi2->setPosition(ccp(0,-124) );
     bg2->addChild(bgdi2,1);
-    bg1->runAction(CCSequence::create(CCMoveBy::create(10,ccp(-480,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
-    bg2->runAction(CCSequence::create(CCMoveBy::create(20,ccp(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
+    bg1->runAction(CCSequence::create(CCMoveBy::create(3,ccp(-480,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg1change)),NULL));
+    bg2->runAction(CCSequence::create(CCMoveBy::create(6,ccp(-960,0)),CCCallFunc::create(this, callfunc_selector(GameObjMap::bg2change)),NULL));
    // stars1 = CCArray::create(5);
    // stars2 = CCArray::create(5);
 	stars1=new CCArray(5);
