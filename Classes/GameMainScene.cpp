@@ -30,7 +30,7 @@ bool GameMain::init()
         return false;
     }
     
-	CCSize size = CCDirector::sharedDirector()->getVisibleSize();    
+    CCSize size = CCDirector::sharedDirector()->getWinSize();    
     map = new GameObjMap();
     map->setAnchorPoint(ccp(0,1));
     map->setPosition(ccp(0,size.height));

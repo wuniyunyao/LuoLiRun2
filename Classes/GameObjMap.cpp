@@ -37,7 +37,7 @@ void GameObjMap::bg2change(){
 }
 void GameObjMap::onEnter(){
     CCNode::onEnter();
-    CCSize size = CCDirector::sharedDirector()->getVisibleSize();
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
     this->setContentSize(CCSizeMake(960,320));
     CCSprite* bg1 = CCSprite::create("back_1.png");
     bg1->setScale(0.5);
