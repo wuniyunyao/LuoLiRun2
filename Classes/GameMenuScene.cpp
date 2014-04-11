@@ -31,7 +31,7 @@ bool GameMenu::init()
         return false;
     }
     
-    CCSize size = CCDirector::sharedDirector()->getWinSize();    
+    CCSize size = CCDirector::sharedDirector()->getVisibleSize();    
     //菜单背景
     CCSprite* bg = CCSprite::create("MainMenu.png");
     bg->setScale(0.5);
@@ -67,7 +67,7 @@ bool GameMenu::init()
 void GameMenu::onEnter(){
     CCLayer::onEnter();
     //入场动作
-    CCSize size = CCDirector::sharedDirector()->getWinSize();
+    CCSize size = CCDirector::sharedDirector()->getVisibleSize();
     CCNode* mainmenu = this->getChildByTag(3);
     mainmenu->setScale(0);
     mainmenu->runAction(CCSequence::create(CCScaleTo::create(0.5,1),CCCallFunc::create(this, callfunc_selector(GameMenu::menuEnter)),NULL));

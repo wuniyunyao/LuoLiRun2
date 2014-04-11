@@ -21,7 +21,7 @@ void GameMark::onExit()
 void GameMark::onEnter()
 {
     CCNode::onEnter();
-    CCSize size = CCDirector::sharedDirector()->getWinSize(); 
+    CCSize size = CCDirector::sharedDirector()->getVisibleSize(); 
     this->setContentSize(size);
    // bits = CCArray::create(5);
 	bits=new CCArray(5);
