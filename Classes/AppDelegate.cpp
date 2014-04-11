@@ -60,7 +60,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 
     // set design resolution size
-	pDirector->getOpenGLView()->setDesignResolutionSize(DESIGN_WIDTH,DESIGN_HEIGHT,kResolutionNoBorder);
+	pDirector->getOpenGLView()->setDesignResolutionSize(DESIGN_WIDTH,DESIGN_HEIGHT,kResolutionExactFit);
 
     CCLog("***IDONG:\n");
     CCLog("***IDONG: Director AS: getContentScaleFactor: scaleFactor=%f",pDirector->getContentScaleFactor());
