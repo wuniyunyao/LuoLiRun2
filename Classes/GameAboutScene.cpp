@@ -28,7 +28,7 @@ bool GameAbout::init()
         return false;
     }
     
-    CCSize size = CCDirector::sharedDirector()->getWinSize();    
+	CCSize size = CCDirector::sharedDirector()->getVisibleSize();    
     
     CCSprite* bg = CCSprite::create("back_1.png");
     bg->setScale(0.6f);
