@@ -11,6 +11,9 @@
 #include "cocos2d.h"
 #include "GameMenuScene.h"
 
+#define DESIGN_WIDTH 480
+#define DESIGN_HEIGHT 320
+
 USING_NS_CC;
 
 AppDelegate::AppDelegate()
@@ -36,6 +39,44 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
+
+
+	// resolution information
+    CCSize size;
+    size= pDirector->getWinSize();
+    CCLog("***IDONG: Director getWinSize:w=%f,h=%f",size.width,size.height);
+
+    size = pDirector->getWinSizeInPixels();
+    CCLog("***IDONG: Director getWinSizeInPixels:w=%f,h=%f",size.width,size.height);
+    
+    size = pDirector->getVisibleSize();
+    CCLog("***IDONG: Director getVisibleSize:w=%f,h=%f",size.width,size.height);
+
+    CCPoint point = pDirector->getVisibleOrigin();
+    CCLog("***IDONG: Director getVisibleOrigin:x=%f,y=%f",point.x,point.y);
+    
+    
+    CCLog("***IDONG: Director BS: getContentScaleFactor: scaleFactor=%f",pDirector->getContentScaleFactor());
+
+
+    // set design resolution size
+	pDirector->getOpenGLView()->setDesignResolutionSize(DESIGN_WIDTH,DESIGN_HEIGHT,ResolutionPolicy::kResolutionNoBorder);
+
+    CCLog("***IDONG:\n");
+    CCLog("***IDONG: Director AS: getContentScaleFactor: scaleFactor=%f",pDirector->getContentScaleFactor());
+
+    size= pDirector->getWinSize();
+    CCLog("***IDONG: Director getWinSize:w=%f,h=%f",size.width,size.height);
+
+    size = pDirector->getWinSizeInPixels();
+    CCLog("***IDONG: Director getWinSizeInPixels:w=%f,h=%f",size.width,size.height);
+    
+    size = pDirector->getVisibleSize();
+    CCLog("***IDONG: Director getVisibleSize:w=%f,h=%f",size.width,size.height);
+
+    point = pDirector->getVisibleOrigin();
+    CCLog("***IDONG: Director getVisibleOrigin:x=%f,y=%f",point.x,point.y);
+
 
     // create a scene. it's an autorelease object
     CCScene *pScene = GameMenu::scene();
