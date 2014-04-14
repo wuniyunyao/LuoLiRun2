@@ -6,16 +6,9 @@ LOCAL_MODULE := cocos2dcpp_shared
 
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
-LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp\
-                   ../../Classes/GameAboutScene.cpp\
-                   ../../Classes/GameMainScene.cpp\
-                   ../../Classes/GameMark.cpp\
-                   ../../Classes/GameMenuScene.cpp\
-                   ../../Classes/GameObjHero.cpp\
-                   ../../Classes/GameObjMap.cpp\
-                   ../../Classes/GameObjStar.cpp\
+FILE_LIST := hellocpp/main.cpp
+FILE_LIST += $(wildcard $(LOCAL_PATH)/../../Classes/*.cpp)
+LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
